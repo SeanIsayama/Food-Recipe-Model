@@ -6,5 +6,21 @@ fnjkdsl;fjsakl;
 
 ---
 
-## Introduction and Question Identification
+## Framing the Problem
 jfdksl;fasdjlk
+
+---
+
+## Baseline Model
+
+---
+
+## Final Model
+
+
+
+---
+
+## Fairness Analysis
+
+---
