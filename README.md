@@ -2,7 +2,7 @@
 **Authors**: Hikaru Isayama, Julia Jung
 
 ## Project Overview
-fnjkdsl;fjsakl;
+Our exploratory data analysis on this dataset can be found [here](https://seanisayama.github.io/Food-Recipe-Study/).
 
 ---
 
