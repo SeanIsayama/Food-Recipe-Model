@@ -61,9 +61,17 @@ In our final model, we decided to add two new features to our model:
 
 `'oh_low_calorie'`: in the original food.com dataset, we discovered that there was a tag named `'low_calorie'` that could be a part of the list of tags in a recipe. Therefore, we decided use one-hot-encoding to represent if this tag was present on the receipe or not in this column. We believe that this new feature will help predict calories, as this tag directly involves the relative amount of calories there is in the recipe.
 
+We again 
+
+We then implemented GridSearchCV to efficiently find hyperparameters through cross-validation. Specifying a series of values to try for each hyperparameter, the GridSearchCV will try all unique combinations of hyperparameters and return the combination with the best average validation performance. 
+
+Using these new best hyperparameters, and adding the new features to our baseline model, we have a new training and test score for our final model here:
+
 | Score type   | Train score         | Test score          |
 |-------------:|:--------------------|:--------------------|
 | f1 Score     | 0.6883168126776259  | 0.6331954101437529  |
+
+We can see here that both the training and test scores increased a noticable amount - an increase of around 0.15-0.5. This means the bias of our model decreased, and the model also still has a relatively low variance. 
 
 ---
 
