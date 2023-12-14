@@ -17,7 +17,7 @@ In this project, we will build a classification model to predict the amount of c
 
 0-250 calories for `'snack'`, 250-500 calories for `'breakfast'`, 500-750 calories for `'lunch'`, 750-1000 calories for `'dinner'`, 1000-1250 calories for `'hearty'`, 1250-1500 calories for `'banquet'`, and 1500+ calories for `'feast'` (with the first value inclusive, last value exclusive). 
 
-As a result, this model will be a multiclass classification, with our response variable being `'meal type'`. We chose to seperate the quantitative intervals of calories into ordinal categories, as our previous project revealed that there were many severe outliers and inconsistencies in the dataset that will make it difficult for a quantitiative regression model to preduct.
+As a result, this model will be a multiclass classification, with our response variable being `'meal type'`. We chose to seperate the quantitative intervals of calories into ordinal categories, as our previous project revealed that there were many severe outliers and inconsistencies in the dataset that will make it difficult for a quantitiative regression model to predict.
 
 Since false positives and false negatives are around equally as bad to have in this project, we chose to evaluate the our model using the f1-score metric - which combines the precision and recall scores of the model to evaluate its accuracy.
 
@@ -43,7 +43,15 @@ Our baseline model does not generalize well to both the training and test sets.
 
 ## Final Model
 
+In our final model, we decided to add two new features to our model:
 
+`'minutes'`: we chose to 
+
+`'oh_low_calorie'`: in the original food.com dataset, we discovered that there was a tag named `'low_calorie'` that could be a part of the list of tags in a recipe. Therefore, we decided use one-hot-encoding to represent if this tag was present on the receipe or not in this column. We beleive that this new feature will help predict calories, as this tag directly involves the relative amount of calories there is in the recipe.
+
+| Score type   | Train score         | Test score          |
+|-------------:|:--------------------|:--------------------|
+| f1 Score     | 0.6883168126776259  | 0.6331954101437529  |
 
 ---
 
