@@ -27,15 +27,17 @@ Since false positives and false negatives are around equally as bad to have in t
 
 In our baseline model, we will use a Decision Tree Classifier with the features `'n_ingredients'` and `'n_steps'` to predict the amount of calories. 
 
-Both `'n_ingredients'` and `'n_steps'` are quantitative discrete variables, as there are all stored as integer values in the dataset. We will use these features to predict `'meal type'`, which we constructed to be an ordinal variable. 
+Both `'n_ingredients'` and `'n_steps'` are quantitative discrete variables, as there are all stored as integer values in the dataset. We will use these features to predict `'meal type'`, which we constructed to be an ordinal variable. To scale quantitative values to unit variance, we also decided to transform both the `'n_ingredients'` and `'n_steps'` features using sklearn's StandarScaler.
 
-
+Finally, we created a test-train split, fit our data on a DecisionTreeClassifier, and evaluated the score of our model.
 
 | Score type   | Train score         | Test score          |
 |-------------:|:--------------------|:--------------------|
 | f1 Score     | 0.47707204709294887 | 0.48320651797187847 |
 
+As we can see above, we noticed an f1 Score of around 0.48 for both the training and test sets. This score is not "good," as it is a relatively low score, meaning there is high bias. However, as the train and test scores seems to be around the same, we can see that there is low variance.
 
+Our baseline model does not generalize well to both the training and test sets.
 
 ---
 
