@@ -25,6 +25,18 @@ Since false positives and false negatives are around equally as bad to have in t
 
 ## Baseline Model
 
+In our baseline model, we will use a Decision Tree Classifier with the features `'n_ingredients'` and `'n_steps'` to predict the amount of calories. 
+
+Both `'n_ingredients'` and `'n_steps'` are quantitative discrete variables, as there are all stored as integer values in the dataset. We will use these features to predict `'meal type'`, which we constructed to be an ordinal variable. 
+
+
+
+| Score type   | Train score         | Test score          |
+|-------------:|:--------------------|:--------------------|
+| f1 Score     | 0.47707204709294887 | 0.48320651797187847 |
+
+
+
 ---
 
 ## Final Model
