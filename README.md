@@ -61,7 +61,7 @@ In our final model, we decided to add two new features to our model:
 
 `'oh_low_calorie'`: in the original food.com dataset, we discovered that there was a tag named `'low_calorie'` that could be a part of the list of tags in a recipe. Therefore, we decided use one-hot-encoding to represent if this tag was present on the receipe or not in this column. We believe that this new feature will help predict calories, as this tag directly involves the relative amount of calories there is in the recipe.
 
-We again 
+We will again use the DecisionTreeClassifer, as we have not been overfitting and believe that we can improve the performance of this classifier,
 
 We then implemented GridSearchCV to efficiently find hyperparameters through cross-validation. Specifying a series of values to try for each hyperparameter, the GridSearchCV will try all unique combinations of hyperparameters and return the combination with the best average validation performance. As a result, we found the best hyperparameters for the DecisionTreeClassifier to be:
 
@@ -70,8 +70,6 @@ We then implemented GridSearchCV to efficiently find hyperparameters through cro
 |`'criterion'`	      |entropy  |
 |`'max_depth'`        |30       |
 |`'min_samples_split'`|2        |
-
-
 
 Using these new best hyperparameters, and adding the new features to our baseline model, we have a new training and test score for our final model here:
 
