@@ -20,6 +20,7 @@ In this project, we will build a classification model to predict the amount of c
 As a result, this model will be a multiclass classification, with our response variable being `'meal type'`. We chose to seperate the quantitative intervals of calories into ordinal categories, as our previous project revealed that there were many severe outliers and inconsistencies in the dataset that will make it difficult for a quantitiative regression model to preduct.
 
 Since false positives and false negatives are around equally as bad to have in this project, we chose to evaluate the our model using the f1-score metric - which combines the precision and recall scores of the model to evaluate its accuracy.
+
 ---
 
 ## Baseline Model
