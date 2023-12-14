@@ -63,8 +63,16 @@ In this final section, our goal is to answer the question: "Does our final model
 
 **Alternative Hypothesis**: Our final model will perform better for recipes with a higher number of ingredients than recipes with a lower number of ingredients. 
 
-**Test Statistic**: We will use the difference in recall scores as our test statistic, and our significance level will be 5%
+**Evaluation Metric**: We will use accuracy as our evaluation metric to determine the performance of our model.
 
+**Test Statistic**: We will use the difference in accuracy scores as our test statistic. We use the difference in means and not the absolute difference since our alternative hypothesis indicates direction.
 
+**Significance Level**: We will use a significance level of 0.01 for our conclusion to ensure accuracy.
+
+The first steps we took to approach this analysis was to use sklearn's Binarizer preprocessing operation to split our data into two groups. More specifically, we created a Binarizer with a thredshold set to the median value of our feature `'n_ingredients'`, to create two groups: recipes with a low number of ingredients, and recipes with a high number of ingredients.
+
+The graph below displays the empirical distribution of our test statistic in 1000 permutations, under the null hypothesis stated above.
+
+From the simulation, we found the p-value to be 0.0, which is less than our significane level of 0.01 for this hypothesis test. Therefore, we can reject the null hypothesis: the results of the test strongly suggest that the observed differences in our samples are not due to random chance, and that our final model tends to perform better with recipes with a higher number of ingredients than recipes with a lower number of ingredients.
 
 ---
