@@ -16,14 +16,14 @@ Our exploratory data analysis on this dataset can be found [here](https://seanis
 In this project, we will build a classification model to predict the amount of calories in a given recipe. Specifically, our model will predict the recipe to be in one of the following categories we created:
 
 |Category|Amount of calories|
-|---|---|
-|`'snack'`	|0-250|
-|`'breakfast'`	|250-500|
-|`'lunch'`	|500-750|
-|`'dinner'`	|750-1000|
-|`'hearty'`	|1000-1250|
-|`'banquet'`	|1250-1500|
-|`'feast'`	|1500+|
+|-------------|---------|
+|`'snack'`	  |0-250    |
+|`'breakfast'`|250-500  |
+|`'lunch'`	  |500-750  |
+|`'dinner'`	  |750-1000 |
+|`'hearty'`	  |1000-1250|
+|`'banquet'`  |1250-1500|
+|`'feast'`	  |1500+    |
 ^(with the first value inclusive, last value exclusive)
 
 As a result, this model will be a multiclass classification, with our response variable being `'meal type'`. We chose to seperate the quantitative intervals of calories into ordinal categories, as our previous project revealed that there were many severe outliers and inconsistencies in the dataset that will make it difficult for a quantitiative regression model to predict.
