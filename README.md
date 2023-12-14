@@ -57,4 +57,14 @@ In our final model, we decided to add two new features to our model:
 
 ## Fairness Analysis
 
+In this final section, our goal is to answer the question: "Does our final model perform better for recipes with a lower number of ingredients than with a high number of ingredients?" For our investigation, we will use a permutation test, where we shuffle the `'meal type'` response variable on 1000 simulations.
+
+**Null Hypothesis**: Our final model will perform roughly the same between recipes with a lower number of ingredients and with a high number of ingredients, and any differences are likely due to chance (our model is fair)
+
+**Alternative Hypothesis**: Our final model will perform better for recipes with a higher number of ingredients than recipes with a lower number of ingredients. 
+
+**Test Statistic**: We will use the difference in recall scores as our test statistic, and our significance level will be 5%
+
+
+
 ---
