@@ -3,20 +3,23 @@
 
 ## Project Overview
 
----
-
-## Framing the Problem
-
 In our previous data analysis project on, we investigated the relationship between the number of ingredients (#) and amount of calories from the recipes and reviews posted on the food.com dataset from 2008.
 
 Our exploratory data analysis on this dataset can be found [here](https://seanisayama.github.io/Food-Recipe-Study/).
 
+---
+
+## Framing the Problem
+
 ### Problem Identification
 
-In this project, we will build on this relationship – we will create a regression model to predict the amount of calories in a given recipe, as we discovered in our exloratory data analysis. 
+In this project, we will build a classification model to predict the amount of calories in a given recipe. Specifically, our model will predict the recipe to be in one of the following categories we created:
 
-Therefore, the response variable for this project will be the amount of calories (#), where we will use the Root Mean Squared Error (RSME) to evaluate our model. We chose to use the RSME instead of other suitable evaluation metrics (such as the coefficient of determination), as we concluded that RMSE is better than R-squared when evaluating how our model will perform to unseen or test data.
+0-250 calories for `'snack'`, 250-500 calories for `'breakfast'`, 500-750 calories for `'lunch'`, 750-1000 calories for `'dinner'`, 1000-1250 calories for `'hearty'`, 1250-1500 calories for `'banquet'`, and 1500+ calories for `'feast'` (with the first value inclusive, last value exclusive). 
 
+As a result, this model will be a multiclass classification, with our response variable being `'meal type'`. We chose to seperate the quantitative intervals of calories into ordinal categories, as our previous project revealed that there were many severe outliers and inconsistencies in the dataset that will make it difficult for a quantitiative regression model to preduct.
+
+Since false positives and false negatives are around equally as bad to have in this project, we chose to evaluate the our model using the f1-score metric - which combines the precision and recall scores of the model to evaluate its accuracy.
 ---
 
 ## Baseline Model
