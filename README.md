@@ -45,7 +45,7 @@ Our baseline model does not generalize well to both the training and test sets.
 
 In our final model, we decided to add two new features to our model:
 
-`'minutes'`: we chose to 
+`'minutes'`: we chose to use minutes, as we believed that although cooking time itself may not be the determining factor,  the preparation steps involved during that time could contribute to higher caloric content. Additionally, we saw that it was a quantitative variable with not many severe outliers in the dataset.
 
 `'oh_low_calorie'`: in the original food.com dataset, we discovered that there was a tag named `'low_calorie'` that could be a part of the list of tags in a recipe. Therefore, we decided use one-hot-encoding to represent if this tag was present on the receipe or not in this column. We beleive that this new feature will help predict calories, as this tag directly involves the relative amount of calories there is in the recipe.
 
