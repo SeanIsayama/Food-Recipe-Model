@@ -47,7 +47,7 @@ Finally, we created a test-train split, fit our data on a DecisionTreeClassifier
 
 As we can see above, we noticed an f1 Score of around 0.48 for both the training and test sets. This score is not "good," as it is a relatively low score, meaning there is high bias. However, as the train and test scores seems to be around the same, we can see that there is low variance.
 
-Our baseline model does not generalize well to both the training and test sets.
+Therefore, we can say that our baseline model does generalize well to both the training and test sets.
 
 ---
 
@@ -82,6 +82,8 @@ In this final section, our goal is to answer the question: "Does our final model
 The first steps we took to approach this analysis was to use sklearn's Binarizer preprocessing operation to split our data into two groups. More specifically, we created a Binarizer with a thredshold set to the median value of our feature `'n_ingredients'`, to create two groups: recipes with a low number of ingredients, and recipes with a high number of ingredients.
 
 The graph below displays the empirical distribution of our test statistic in 1000 permutations, under the null hypothesis stated above.
+
+<iframe src="assets/hypothesis.html" width=800 height=600 frameBorder=0></iframe> 
 
 From the simulation, we found the p-value to be 0.0, which is less than our significane level of 0.01 for this hypothesis test. Therefore, we can reject the null hypothesis: the results of the test strongly suggest that the observed differences in our samples are not due to random chance, and that our final model tends to perform better with recipes with a higher number of ingredients than recipes with a lower number of ingredients.
 
