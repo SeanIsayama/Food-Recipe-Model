@@ -63,7 +63,15 @@ In our final model, we decided to add two new features to our model:
 
 We again 
 
-We then implemented GridSearchCV to efficiently find hyperparameters through cross-validation. Specifying a series of values to try for each hyperparameter, the GridSearchCV will try all unique combinations of hyperparameters and return the combination with the best average validation performance. 
+We then implemented GridSearchCV to efficiently find hyperparameters through cross-validation. Specifying a series of values to try for each hyperparameter, the GridSearchCV will try all unique combinations of hyperparameters and return the combination with the best average validation performance. As a result, we found the best hyperparameters for the DecisionTreeClassifier to be:
+
+|Hyperparameter|Value|
+|---------------------|---------|
+|`'criterion'`	      |entropy  |
+|`'max_depth'`        |30       |
+|`'min_samples_split'`|2        |
+
+
 
 Using these new best hyperparameters, and adding the new features to our baseline model, we have a new training and test score for our final model here:
 
