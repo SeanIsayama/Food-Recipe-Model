@@ -99,7 +99,7 @@ The first steps we took to approach this analysis was to use sklearn's Binarizer
 
 The graph below displays the empirical distribution of our test statistic in 1000 permutations, under the null hypothesis stated above.
 
-<iframe src="assets/hypothesis_distribution" width=800 height=600 frameBorder=0></iframe> 
+<iframe src="assets/hyp_distribution" width=800 height=600 frameBorder=0></iframe> 
 
 From the simulation, we found the p-value to be 0.0, which is less than our significane level of 0.01 for this hypothesis test. Therefore, we can reject the null hypothesis: the results of the test strongly suggest that the observed differences in our samples are not due to random chance, and that our final model tends to perform better with recipes with a higher number of ingredients than recipes with a lower number of ingredients.
 
