@@ -61,7 +61,7 @@ In our final model, we decided to add two new features to our model:
 
 `'oh_low_calorie'`: in the original food.com dataset, we discovered that there was a tag named `'low_calorie'` that could be a part of the list of tags in a recipe. Therefore, we decided use one-hot-encoding to represent if this tag was present on the receipe or not in this column. We believe that this new feature will help predict calories, as this tag directly involves the relative amount of calories there is in the recipe.
 
-We will again use the DecisionTreeClassifer, as we have not been overfitting and believe that we can improve the performance of this classifier,
+We will again use the DecisionTreeClassifer, as we have not been overfitting and believe that we can improve the performance of this classifier.
 
 We then implemented GridSearchCV to efficiently find hyperparameters through cross-validation. Specifying a series of values to try for each hyperparameter, the GridSearchCV will try all unique combinations of hyperparameters and return the combination with the best average validation performance. As a result, we found the best hyperparameters for the DecisionTreeClassifier to be:
 
@@ -77,7 +77,7 @@ Using these new best hyperparameters, and adding the new features to our baselin
 |-------------:|:--------------------|:--------------------|
 | f1 Score     | 0.6883168126776259  | 0.6331954101437529  |
 
-We can see here that both the training and test scores increased a noticable amount - an increase of around 0.15-0.5. This means the bias of our model decreased, and the model also still has a relatively low variance. 
+We can see here that both the training and test scores increased a noticable amount - an increase of around 0.15-0.2. This means the bias of our model decreased, and the model also still has a relatively low variance. 
 
 ---
 
@@ -99,7 +99,7 @@ The first steps we took to approach this analysis was to use sklearn's Binarizer
 
 The graph below displays the empirical distribution of our test statistic in 1000 permutations, under the null hypothesis stated above.
 
-<iframe src="assets/hypothesis.html" width=800 height=600 frameBorder=0></iframe> 
+<iframe src="assets/hypothesis_distribution" width=800 height=600 frameBorder=0></iframe> 
 
 From the simulation, we found the p-value to be 0.0, which is less than our significane level of 0.01 for this hypothesis test. Therefore, we can reject the null hypothesis: the results of the test strongly suggest that the observed differences in our samples are not due to random chance, and that our final model tends to perform better with recipes with a higher number of ingredients than recipes with a lower number of ingredients.
 
